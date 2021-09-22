@@ -8,7 +8,7 @@ on:
         types: [published]
 
 env:
-    DOCKER_BASE_NAME: ghcr.io/${{ github.repository }}/docker-doxygen
+    DOCKER_BASE_NAME: ghcr.io/${{ github.repository }}/doxygen
 
 jobs:
     push:
