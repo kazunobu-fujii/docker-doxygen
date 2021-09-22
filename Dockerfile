@@ -1,6 +1,8 @@
-FROM kazunobufujii/ubuntu:latest
-MAINTAINER Kazunobu FUJII
+FROM ubuntu:20.04
 
 RUN apt-get update \
- && apt-get install -y doxygen graphviz
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y doxygen graphviz plantuml \
+ && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /data
+CMD ["/usr/bin/doxygen", "-h"]
